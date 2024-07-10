@@ -1,9 +1,29 @@
+import React from "react";
+import TypographyProps from "./Type";
 
+const Typography: React.FC<TypographyProps> = ({
+  tag = "p",
+  text,
+  classes,
+  children,
+  style,
+  role,
+  ariaLabel,
+  ariaLabelledBy,
+}) => {
+  return React.createElement(
+    tag,
+    {
+      className: classes,
+      style: style,
+      role: role,
+      "aria-label": ariaLabel,
+      "aria-labelledby": ariaLabelledBy,
+    },
+    <>
+      {text},{children}
+    </>
+  );
+};
 
-function Typography() {
-  return (
-    <div>Typography</div>
-  )
-}
-
-export default Typography
+export default Typography;
